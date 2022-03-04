@@ -12,7 +12,13 @@
         <members>Logger</members>
         <members>LoggerUtil</members>
         <members>LoggerConstants</members>
+        <members>LogTriggerHandler</members>
         <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>LogTrigger</members>
+        <name>ApexTrigger</name>
     </types>
 
     <types>

@@ -8,10 +8,14 @@ public with sharing class LoggerUtil {
         return addressList;    
     }
 
+    public static Logger_Setting__mdt getLoggerSetting() {
+        return Logger_Setting__mdt.getInstance(LoggerConstants.CUSTOM_METADATA_TYPE_RECORD_LOGGER_SETTING);
+    }
+
     public static Log__c createLog(Logger.LogParameter logParameter) {
         Log__c log = new Log__c();
-        if (Schema.getGlobalDescribe().get(LoggerConstants.OBJECT_LOG).getDescribe().getRecordTypeInfosByName().get(logParameter.type) != null) {
-            log.RecordTypeId = Schema.getGlobalDescribe().get(LoggerConstants.OBJECT_LOG).getDescribe().getRecordTypeInfosByName().get(logParameter.type).getRecordTypeId();
+        if (Schema.getGlobalDescribe().get(LoggerConstants.OBJECT_LOG).getDescribe().getRecordTypeInfosByDeveloperName().get(logParameter.logType) != null) {
+            log.RecordTypeId = Schema.getGlobalDescribe().get(LoggerConstants.OBJECT_LOG).getDescribe().getRecordTypeInfosByDeveloperName().get(logParameter.logType).getRecordTypeId();
         }
         log.Queries__c = Limits.getQueries();
         log.DML_Statements__c = Limits.getDmlRows();
@@ -22,14 +26,32 @@ public with sharing class LoggerUtil {
 
     public static Messaging.SingleEmailMessage createEmail(Logger.LogParameter logParameter, List<String> addressList) {
         Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
-        email.setSubject('Error in ' + logParameter.source);
-        email.setPlainTextBody(logParameter.content);
+        email.setSubject('Error in ' + logParameter.sourceName);
+        email.setPlainTextBody(logParameter.message);
         email.setToAddresses(addressList);
         return email;
     }
 
-    public static Logger_Setting__mdt getLoggerConfiguration() {
-        return Logger_Setting__mdt.getInstance(LoggerConstants.GLOBAL_SETTING);
+    @Future(callout=true)
+    public static void sendLogEmails(Set<Id> logIdSet) {   
+
+        List<Log__c> logList = [
+            SELECT Id
+            FROM Log__c
+            WHERE Id IN :logIdSet
+        ];
+
+        List<Messaging.SingleEmailMessage> emailList = new List<Messaging.SingleEmailMessage>();
+
+        for (Log__c log : logList) {
+            Messaging.SingleEmailmessage email = new Messaging.SingleEmailmessage();
+            emailList.add(email);
+        }
+
+        if (emailList.size() > 0) {
+            Messaging.sendEmail(emailList);
+        }
+
     }
 
 }
