@@ -50,6 +50,7 @@ public with sharing class Logger {
         log.Line_Number__c = e.getLineNumber();
         log.Exception_Message__c = e.getMessage();
         log.Exception_Type__c = e.getTypeName();
+        Logger.error(e.getTypeName() + ': ' + e.getMessage());
         insert log;
     }
 }

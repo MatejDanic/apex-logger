@@ -51,7 +51,23 @@ public with sharing class LoggerUtil {
         if (emailList.size() > 0) {
             Messaging.sendEmail(emailList);
         }
-
     }
 
+    public static String getClassName() {
+        return getClassName(new DmlException().getStackTraceString().substringAfter('\n'));
+    }
+
+    public static String getMethodName() {
+        return getMethodName(new DmlException().getStackTraceString().substringAfter('\n'));
+    }
+
+    private static String getClassName(String line) {
+        if (line.startsWith('Class.'))
+            line = line.substringAfter('Class.');
+        return line.substringBefore(':').substringBeforeLast('.');
+    }    
+
+    private static String getMethodName(String line) {
+        return line.substringBefore(':').substringAfterLast('.');
+    }
 }
