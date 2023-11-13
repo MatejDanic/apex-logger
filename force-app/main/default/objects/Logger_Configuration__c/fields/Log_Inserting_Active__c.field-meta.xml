@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Log_Inserting_Active__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If set to true, log records with logging level lower or equal to the value of &quot;Highest Log Level for Insert&quot; are inserted into the database with detailed information.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If set to true, log records with logging level lower or equal to the value of &quot;Highest Log Level for Insert&quot; are inserted into the database with detailed information.</inlineHelpText>
+    <label>Log Inserting Active</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>CPU_Time_Used__c</fullName>
     <externalId>false</externalId>
-    <formula>CPU_Time__c / 10000</formula>
+    <formula>CPU_Time__c/CPU_Time_Limit__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>CPU Time Used</label>
     <precision>18</precision>

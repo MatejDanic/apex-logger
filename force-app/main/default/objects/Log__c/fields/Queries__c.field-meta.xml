@@ -3,7 +3,7 @@
     <fullName>Queries__c</fullName>
     <externalId>false</externalId>
     <label>Queries</label>
-    <precision>3</precision>
+    <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
     <trackTrending>false</trackTrending>

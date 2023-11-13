@@ -1,29 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Log__c</members>
-        <members>Logger_Setting__mdt</members>
-        <members>Administrator__c</members>
-        <name>CustomObject</name>
-    </types>
-
-    <types>
-        <members>DummyClass</members>
-        <members>Logger</members>
-        <members>LoggerUtil</members>
-        <members>LoggerConstants</members>
-        <members>LogTriggerHandler</members>
+        <members>ApexLogger</members>
+        <members>ApexLoggerTest</members>
         <name>ApexClass</name>
     </types>
-
+    
     <types>
-        <members>LogTrigger</members>
+        <members>LogEventTrigger</members>
         <name>ApexTrigger</name>
     </types>
 
     <types>
-        <members>Logger_Setting.Global_Setting</members>
-        <name>CustomMetadata</name>
+        <members>Log__c</members>
+        <members>Logger_Configuration__c</members>
+        <members>Log_Event__e</members>
+        <name>CustomObject</name>
+    </types>
+
+    <types>
+        <!-- INFORMATION -->
+        <members>Log__c.Time__c</members>
+        <members>Log__c.User__c</members>
+        <members>Log__c.Stack_Trace__c</members>
+        <members>Log__c.Exception__c</members>
+        <!-- CONTENT -->
+        <members>Log__c.Message__c</members>
+        <members>Log__c.Data__c</members>
+        <!-- TRANSACTION CONTEXT -->
+        <members>Log__c.Is_Batch__c</members>
+        <members>Log__c.Is_Future__c</members>
+        <members>Log__c.Is_Scheduled__c</members>
+        <members>Log__c.Is_Queueable__c</members>
+        <members>Log__c.Quiddity__c</members>
+        <members>Log__c.Request_Id__c</members>
+        <!-- LIMITS -->
+        <members>Log__c.CPU_Time__c</members>
+        <members>Log__c.CPU_Time_Limit__c</members>
+        <members>Log__c.CPU_Time_Used__c</members>
+        <members>Log__c.DML_Rows__c</members>
+        <members>Log__c.DML_Rows_Limit__c</members>
+        <members>Log__c.DML_Rows_Used__c</members>
+        <members>Log__c.DML_Statements__c</members>
+        <members>Log__c.DML_Statements_Limit__c</members>
+        <members>Log__c.DML_Statements_Used__c</members>
+        <members>Log__c.Heap_Size__c</members>
+        <members>Log__c.Heap_Size_Limit__c</members>
+        <members>Log__c.Heap_Size_Used__c</members>
+        <members>Log__c.Queries__c</members>
+        <members>Log__c.Queries_Limit__c</members>
+        <members>Log__c.Queries_Used__c</members>
+        <members>Log__c.Query_Rows__c</members>
+        <members>Log__c.Query_Rows_Limit__c</members>
+        <members>Log__c.Query_Rows_Used__c</members>
+        <!-- CUSTOM SETTING -->
+        <members>Logger_Configuration__c.Log_Inserting_Active__c</members>
+        <members>Logger_Configuration__c.Highest_Log_Level_for_Insert__c</members>
+        <members>Logger_Configuration__c.Asynchronous_Mode__c</members>
+        <name>CustomField</name>
+    </types>
+
+    <types>
+        <members>Log__c.ERROR</members>
+        <members>Log__c.WARN</members>
+        <members>Log__c.INFO</members>
+        <members>Log__c.DEBUG</members>
+        <name>RecordType</name>
+    </types>
+
+    <types>
+        <members>Log__c</members>
+        <name>CustomTab</name>
+    </types>
+
+    <types>
+        <members>Log__c-Log Layout</members>
+        <members>Log__c-Error Log Layout</members>
+        <name>Layout</name>
+    </types>
+
+    <types>
+        <members>Log_Record_Page</members>
+        <name>FlexiPage</name>
     </types>
 
     <version>52.0</version>

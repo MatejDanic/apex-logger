@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Highest_Log_Level_for_Insert__c</fullName>
+    <defaultValue>&apos;INFO&apos;</defaultValue>
+    <description>If Log Record Inserting is active, only logs with lower or equal levels to this are inserted.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If Log Record Inserting is active, only logs with lower or equal levels to this are inserted.
+Enter one of the values from below (listed from lowest to the highest):
+ERROR
+WARN
+INFO
+DEBUG
+FINE
+FINER
+FINEST</inlineHelpText>
+    <label>Highest Log Level for Insert</label>
+    <length>32</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

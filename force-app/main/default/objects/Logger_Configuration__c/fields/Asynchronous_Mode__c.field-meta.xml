@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Asynchronous_Mode__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If Log Record Inserting is active, all records are inserted through a Queueable job outside of the scope of the original transaction.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If Log Record Inserting is active, all records are inserted through a Queueable job outside of the scope of the original transaction.</inlineHelpText>
+    <label>Asynchronous Mode</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
